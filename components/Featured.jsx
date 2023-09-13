@@ -1,15 +1,15 @@
 import React from 'react';
 import {View,Text,FlatList,StyleSheet,Image,Pressable} from 'react-native';
 
-const Handpicked = ({navigation}) => {
+const Featured = ({navigation}) => {
     return (
         <View >
-            <Text >Handpicked for you 💚</Text>
+            <Text >Featured Restaurants</Text>
             {/* <FlatList
                 data={DATA}
                 renderItem={({item}) => (
                     <Pressable onPress={() => navigation.navigate('Details',{item})}>
-                        <Image  source={{uri: item.image}}/>
+                        <Image source={{uri: item.image}}/>
                     </Pressable>
                 )}
                 keyExtractor={item => item.id}
@@ -20,4 +20,4 @@ const Handpicked = ({navigation}) => {
     );
 };
 
-export default Handpicked;
+export default Featured;

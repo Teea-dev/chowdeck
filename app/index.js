@@ -1,14 +1,31 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+import { Stack, useRouter } from "expo-router";
+import { COLORS, icons, images } from "../constants";
+import Handpicked from "../components/Handpicked";
+import Featured from "../components/Featured";
+// import Categories from "../components/Categories";
 
 export default function Page() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.main}>
-          <Text style={styles.title}>Chowdeck
-          hi</Text>
-        </View>
-      </View>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerShadowVisible: false,
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension="100%" />
+          ),
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.discount} dimension="100%" />
+          ),
+          headerTitle: "HEADING",
+        }}
+      />
+      <ScrollView >
+        {/* <Categories /> */}
+        <Handpicked />
+        <Featured />
+      </ScrollView>
     </SafeAreaView>
   );
 }
