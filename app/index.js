@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { Stack } from "expo-router";
 import { COLORS, icons, images } from "../constants";
 import Handpicked from "../components/Handpicked";
 import Featured from "../components/Featured";
+import ScreenHeaderBtn from "../components/header/ScreenHeaderBtn";
 // import Categories from "../components/Categories";
 
 export default function Page() {
@@ -10,7 +11,7 @@ export default function Page() {
     <SafeAreaView style={styles.container}>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: COLORS.lightWhite },
+          headerStyle: { backgroundColor: COLORS.gray },
           headerShadowVisible: false,
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={icons.menu} dimension="100%" />
@@ -18,7 +19,7 @@ export default function Page() {
           headerLeft: () => (
             <ScreenHeaderBtn iconUrl={icons.discount} dimension="100%" />
           ),
-          headerTitle: "HEADING",
+          headerTitle: "",
         }}
       />
       <ScrollView >
