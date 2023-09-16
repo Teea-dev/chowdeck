@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 const Categories = ({ navigation }) => {
   const category = [
-    { category: "Resturant", icon: "cutlery" },
+    { category: "Restaurant", icon: "cutlery" },
     { category: "Supermarkets", icon: "shopping-cart" },
     { category: "Pharmacies", icon: "medkit" },
     { category: "African", icon: "globe" },
