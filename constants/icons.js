@@ -9,6 +9,8 @@ import location from "../assets/icons/location.png";
 import chevronLeft from '../assets/icons/chevron-left.png'
 import chevronRight from '../assets/icons/chevron-right.png'
 import discounted from '../assets/icons/discount-coupon.png'
+import lift from "../assets/icons/lift-1.png"
+import cart from '../assets/icons/shopping-basket.png'
 
 export default {
   heart,
@@ -22,4 +24,6 @@ export default {
   chevronLeft,
   chevronRight,
   discounted,
+  lift,
+  cart
 };
