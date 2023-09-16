@@ -8,7 +8,7 @@ import share from "../assets/icons/share.png";
 import location from "../assets/icons/location.png";
 import chevronLeft from '../assets/icons/chevron-left.png'
 import chevronRight from '../assets/icons/chevron-right.png'
-import discount from '../assets/icons/discount-coupon (1).svg'
+import discounted from '../assets/icons/discount-coupon.png'
 
 export default {
   heart,
@@ -21,5 +21,5 @@ export default {
   location,
   chevronLeft,
   chevronRight,
-  discount
+  discounted,
 };

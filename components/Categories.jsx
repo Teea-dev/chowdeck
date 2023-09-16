@@ -3,9 +3,12 @@ import {View,Text,FlatList,StyleSheet,Image,Pressable} from 'react-native';
 
 const Categories = ({navigation}) => {
     return (
-        <View style={styles.container}>
+        <View >
+            <Text>
+                Categories
+            </Text>
           
-            <FlatList
+            {/* <FlatList
                 data={DATA}
                 renderItem={({item}) => (
                     <Pressable onPress={() => navigation.navigate('Details',{item})}>
@@ -15,7 +18,7 @@ const Categories = ({navigation}) => {
                 keyExtractor={item => item.id}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-            />
+            /> */}
         </View>
     );
 };

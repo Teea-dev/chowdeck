@@ -4,26 +4,26 @@ import { COLORS, icons, images } from "../constants";
 import Handpicked from "../components/Handpicked";
 import Featured from "../components/Featured";
 import ScreenHeaderBtn from "../components/header/ScreenHeaderBtn";
-// import Categories from "../components/Categories";
-
+import LocationSearch from "../components/locationSearch/locationSearch";
+import Categories from "../components/Categories";
 export default function Page() {
   return (
     <SafeAreaView style={styles.container}>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: COLORS.gray },
+          headerStyle: { backgroundColor: COLORS.white, },
           headerShadowVisible: false,
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension="100%" />
+            <ScreenHeaderBtn iconUrl={icons.discounted} dimension="60%" />
           ),
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.discount} dimension="100%" />
+            <LocationSearch/>
           ),
           headerTitle: "",
         }}
       />
       <ScrollView >
-        {/* <Categories /> */}
+        <Categories />
         <Handpicked />
         <Featured />
       </ScrollView>
@@ -50,5 +50,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 36,
     color: "#38434D",
+    
   },
 });
