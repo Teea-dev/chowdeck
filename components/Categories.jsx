@@ -6,7 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 const Categories = ({ navigation }) => {
   const category = [
-    { category: "Restaurant", icon: "cutlery" },
+    { category: "Restaurants", icon: "cutlery" },
     { category: "Supermarkets", icon: "shopping-cart" },
     { category: "Pharmacies", icon: "medkit" },
     { category: "African", icon: "globe" },
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     gap:50
   },
   categoryContainer: {
-    // flex: 1,
     backgroundColor: "#83829A",
     marginHorizontal: 5,
     padding: 30,
@@ -71,10 +70,12 @@ const styles = StyleSheet.create({
   },
   category: {
     textAlign: "center",
+    fontSize:16
     // padding:5
   },
   icon: {
     marginBottom: 10,
-    alignItems:"center" 
+    alignItems:"center" ,
+    justifyContent:'center'
   },
 });
