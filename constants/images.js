@@ -1,6 +1,18 @@
-import profile from "../assets/images/kemal.jpg";
 import discount from "../assets/images/discount.svg"
+import burgerKing from '../assets/images/burger king.jpg'
+import chickenRepublic from '../assets/images/Chicken_Republic.jpg'
+import dodo from '../assets/images/dodo-pizza.jpg'
+import hexagon from '../assets/images/hexagon.jpg'
+import kfc from '../assets/images/kfc.png'
+import pasta from '../assets/images/pasta.jpg'
+import starbuck from '../assets/images/starbucks.jpg'
 export default {
-  profile,
+ burgerKing,
+ chickenRepublic,
+ dodo,
+ hexagon,
+ kfc,
+ pasta,
+ starbuck,
   discount
 };
