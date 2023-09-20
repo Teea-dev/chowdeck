@@ -7,7 +7,9 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import { COLORS, images } from "../constants"; // Import your images
+import { COLORS, images } from "../constants"; 
+import Icon from "react-native-vector-icons/FontAwesome"; 
+
 
 const RestaurantCard = ({ name, image, navigation }) => (
   <Pressable
@@ -15,7 +17,10 @@ const RestaurantCard = ({ name, image, navigation }) => (
     onPress={() => navigation.navigate("Details", { name })}
   >
     {image && <Image source={image} style={[styles.image, {borderRadius:10}]} />}
-    <Text>{name}</Text>
+    <Text style={styles.name}>{name}</Text>
+    <View>
+        <Icon name="motorcycle" size={20} style={{alignSelf:"flex-start", marginRight:10}} />
+      </View>
   </Pressable>
 );
 
@@ -47,6 +52,7 @@ const Handpicked = ({ navigation }) => {
         horizontal
         showsHorizontalScrollIndicator={false}
       />
+    
     </View>
   );
 };
@@ -69,6 +75,11 @@ const styles = StyleSheet.create({
   flatlist: {
     marginVertical: 10,
     marginLeft: 3,
+  },
+  name: {
+    fontSize: 16,
+    fontWeight: "600",
+    marginTop: 5,
   },
   image: {
     width: 300, 
