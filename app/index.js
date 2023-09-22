@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 import { COLORS, icons, images } from "../constants";
 import Handpicked from "../components/Handpicked";
 import Featured from "../components/Featured";
+import Allrestaurants from "../components/Allrestaurants";
 import ScreenHeaderBtn from "../components/header/ScreenHeaderBtn";
 import LocationSearch from "../components/locationSearch/locationSearch";
 import Categories from "../components/Categories";
@@ -26,6 +27,7 @@ export default function Page() {
         <Categories />
         <Handpicked />
         <Featured />
+        <Allrestaurants />
       </ScrollView>
     </SafeAreaView>
   );
