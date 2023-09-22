@@ -7,20 +7,28 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import { COLORS, images } from "../constants"; 
-import Icon from "react-native-vector-icons/FontAwesome"; 
-
+import { COLORS, images } from "../constants";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const RestaurantCard = ({ name, image, navigation }) => (
   <Pressable
-    style={[styles.card,]}
+    style={[styles.card]}
     onPress={() => navigation.navigate("Details", { name })}
   >
-    {image && <Image source={image} style={[styles.image, {borderRadius:10}]} />}
+    {image && (
+      <Image source={image} style={[styles.image, { borderRadius: 10 }]} />
+    )}
     <Text style={styles.name}>{name}</Text>
+    <View style={styles.deliveryAndRating}>
+
+    <View style={styles.deliveryInfoContainer}>
+      <Icon name="motorcycle" size={18} style={styles.icon} />
+      <Text style={styles.deliveryInfo}>From ₦400 | 19-20min</Text>
+    </View>
     <View>
-        <Icon name="motorcycle" size={20} style={{alignSelf:"flex-start", marginRight:10}} />
-      </View>
+      <Text style={styles.rating}>4.2 (167) </Text>
+    </View>
+    </View>
   </Pressable>
 );
 
@@ -28,7 +36,7 @@ const Handpicked = ({ navigation }) => {
   const handpickedResturant = [
     { name: "Hexagon Rice Samonda", image: images.hexagon },
     { name: "KFC-Ibadan", image: images.kfc },
-    { name: "Chef-kabs", image: images.pasta}, 
+    { name: "Chef-kabs", image: images.pasta },
     { name: "Burger-King", image: images.burgerKing },
     { name: "Starbucks", image: images.starbuck },
     { name: "Dodo-pizza", image: images.dodo },
@@ -48,11 +56,10 @@ const Handpicked = ({ navigation }) => {
             navigation={navigation}
           />
         )}
-        keyExtractor={(item, index) => index.toString()} 
+        keyExtractor={(item, index) => index.toString()}
         horizontal
         showsHorizontalScrollIndicator={false}
       />
-    
     </View>
   );
 };
@@ -82,8 +89,30 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   image: {
-    width: 300, 
-    height: 150, 
-    resizeMode: "cover", 
+    width: 300,
+    height: 150,
+    resizeMode: "cover",
   },
+  deliveryInfoContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  icon: {
+    marginRight: 10,
+  },
+
+  deliveryInfo: {
+    fontSize: 15,
+    color: COLORS.gray,
+  },
+  deliveryAndRating:{
+    flexDirection:"row",
+    alignItems: "center",
+    marginTop: 10,
+
+    justifyContent:"space-between"
+  },
+  rating:{
+    fontWeight:"600"
+  }
 });
