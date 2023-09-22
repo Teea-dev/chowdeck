@@ -1,4 +1,4 @@
-// import React from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -10,7 +10,17 @@ import {
 import { COLORS, images } from "../constants";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const RestaurantCard = ({ name, image, navigation }) => (
+const RestaurantCard = ({ name, image, navigation }) => {
+
+   const [isLiked, setIsLiked] = useState(false);
+
+
+  const toggleLike = () => {
+    setIsLiked(!isLiked);
+  };
+  return(
+
+
   <Pressable
     style={[styles.card]}
     onPress={() => navigation.navigate("Details", { name })}
@@ -18,7 +28,14 @@ const RestaurantCard = ({ name, image, navigation }) => (
     {image && (
       <Image source={image} style={[styles.image, { borderRadius: 10 }]} />
     )}
+    <View  style={styles.textAndLove}>
+
     <Text style={styles.name}>{name}</Text>
+    <Icon name="heart" size={18} 
+    color={isLiked ? COLORS.red : COLORS.gray} 
+    onPress={toggleLike} 
+    />
+    </View>
     <View style={styles.deliveryAndRating}>
 
     <View style={styles.deliveryInfoContainer}>
@@ -30,7 +47,8 @@ const RestaurantCard = ({ name, image, navigation }) => (
     </View>
     </View>
   </Pressable>
-);
+  )
+};
 
 const Handpicked = ({ navigation }) => {
   const handpickedResturant = [
@@ -114,5 +132,11 @@ const styles = StyleSheet.create({
   },
   rating:{
     fontWeight:"600"
+  },
+  textAndLove:{
+    flexDirection:"row",
+    alignItems:"center",
+    justifyContent:"space-between",
+    marginTop:10
   }
 });
