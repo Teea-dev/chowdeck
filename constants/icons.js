@@ -11,7 +11,7 @@ import chevronRight from '../assets/icons/chevron-right.png'
 import discounted from '../assets/icons/discount-coupon.png'
 import lift from "../assets/icons/lift-1.png"
 import cart from '../assets/icons/shopping-basket.png'
-
+import house from '../assets/icons/house-entrance-alternate.png'
 export default {
   heart,
   menu,
@@ -25,5 +25,6 @@ export default {
   chevronRight,
   discounted,
   lift,
-  cart
+  cart,
+  house
 };

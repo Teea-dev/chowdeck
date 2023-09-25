@@ -7,6 +7,7 @@ import Allrestaurants from "../components/Allrestaurants";
 import ScreenHeaderBtn from "../components/header/ScreenHeaderBtn";
 import LocationSearch from "../components/locationSearch/locationSearch";
 import Categories from "../components/Categories";
+import Footer from "../components/footer/Footer";
 export default function Page() {
   return (
     <SafeAreaView style={styles.container}>
@@ -29,6 +30,7 @@ export default function Page() {
         <Featured />
         <Allrestaurants />
       </ScrollView>
+      <Footer/>
     </SafeAreaView>
   );
 }

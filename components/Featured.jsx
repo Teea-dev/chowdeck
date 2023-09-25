@@ -7,7 +7,7 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import { COLORS, images } from "../constants";
+import { COLORS, images,icons } from "../constants";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const RestaurantCard = ({ name, image, navigation }) => {
@@ -23,7 +23,7 @@ const RestaurantCard = ({ name, image, navigation }) => {
 
   <Pressable
     style={[styles.card]}
-    onPress={() => navigation.navigate("Details", { name })}
+    // onPress={() => navigation.navigate("Details", { name })}
   >
     {image && (
       <Image source={image} style={[styles.image, { borderRadius: 10 }]} />
@@ -31,6 +31,8 @@ const RestaurantCard = ({ name, image, navigation }) => {
     <View  style={styles.textAndLove}>
 
     <Text style={styles.name}>{name}</Text>
+    {/* <Image source={icons.heartOutline} style={{width:20,height:20}}
+     /> */}
     <Icon name="heart" size={18} 
     color={isLiked ? COLORS.red : COLORS.gray} 
     onPress={toggleLike} 
