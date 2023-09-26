@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   iconText:{
-    fontSize:10,
+    fontSize:12,
     marginTop:5,
   }
 });
