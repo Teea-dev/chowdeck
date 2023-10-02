@@ -10,6 +10,7 @@ import {
 import { COLORS, images } from "../constants";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+
 const RestaurantCard = ({ name, image, navigation }) => {
 
    const [isLiked, setIsLiked] = useState(false);
@@ -18,12 +19,16 @@ const RestaurantCard = ({ name, image, navigation }) => {
   const toggleLike = () => {
     setIsLiked(!isLiked);
   };
+  const handlePress = () => {
+    navigation.navigate("Details", { name });
+  }
+
   return(
 
 
   <Pressable
     style={[styles.card]}
-    onPress={() => navigation.navigate("Details", { name })}
+    onPress={handlePress}
   >
     {image && (
       <Image source={image} style={[styles.image, { borderRadius: 10 }]} />
