@@ -10,6 +10,7 @@ import OrdersScreen from './screens/OrdersScreen';
 import SupportScreen from './screens/SupportScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
+
 // Create a Stack Navigator for each tab
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Search" component={SearchStackScreen} />
         <Tab.Screen name="Orders" component={OrdersStackScreen} />
         <Tab.Screen name="Support" component={SupportStackScreen} />

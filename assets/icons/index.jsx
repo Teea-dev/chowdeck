@@ -1,0 +1,9 @@
+export { default as ChatRoundDots } from "./chatrounddots";
+export { default as Order } from "./order";
+export { default as PromoCode } from "./Promocode";
+export { default as Filter } from "./filter";
+export { default as OnlineStoreBasket } from "./onlineStoreBasket";
+export { default as Restaurant } from "./restaurant";
+export { default as Pharmacy } from "./pharmacy";
+export { default as Home } from "./home";
+export { default as Search } from "./search";

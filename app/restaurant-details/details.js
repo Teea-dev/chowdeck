@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack } from 'expo-router';
 import { View, ScrollView,SafeAreaView } from 'react-native';
+import { PromoCode } from '../../assets/icons';
 
 function Details({route}) {
     const { name } = route.params;
@@ -11,6 +12,7 @@ function Details({route}) {
                 headerStyle: { backgroundColor: COLORS.white, },
                 headerShadowVisible: false,
                 headerRight: () => (
+                    // <PromoCode/>
                     <ScreenHeaderBtn iconUrl={icons.discounted} dimension="60%" />
                 ),
                 headerLeft: () => (

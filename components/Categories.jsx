@@ -1,45 +1,50 @@
-// import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome"; 
-
-
+import { OnlineStoreBasket, Restaurant, Pharmacy } from "../assets/icons"; // Make sure the import path is correct
 
 const Categories = ({ navigation }) => {
-  const category = [
-    { category: "Restaurants", icon: "cutlery" },
-    { category: "Supermarkets", icon: "shopping-cart" },
-    { category: "Pharmacies", icon: "medkit" },
-    { category: "African", icon: "globe" },
+  const categories = [
+    { category: "Restaurants", icon: "cutlery", customIcon: Restaurant },
+    { category: "Supermarkets", icon: "shopping-cart", customIcon: OnlineStoreBasket },
+    { category: "Pharmacies", icon: "medkit", customIcon: Pharmacy },
+    { category: "Relay By Chowdeck", icon: "globe" },
+    { category: "Local Markets", icon: "ellipsis-h" },
     { category: "More", icon: "ellipsis-h" },
   ];
 
-  const firstRow = category.slice(0, 2);
-  const secondRow = category.slice(2);
+  const renderCategory = ({ category, icon, customIcon: CustomIcon }, index) => (
+    <View
+      key={index}
+      style={[
+        styles.categoryContainer,
+        { backgroundColor: getColor(index) },
+      ]}
+    >
+      {CustomIcon ? (
+        <CustomIcon width={30} height={30} style={styles.icon} />
+      ) : (
+        <Icon name={icon} size={30} style={styles.icon} />
+      )}
+      <Text style={styles.category}>{category}</Text>
+    </View>
+  );
+
+  const renderRows = () => {
+    const rows = [];
+    for (let i = 0; i < categories.length; i += 3) {
+      rows.push(
+        <View style={styles.row} key={i}>
+          {categories.slice(i, i + 3).map(renderCategory)}
+        </View>
+      );
+    }
+    return rows;
+  };
 
   return (
     <View style={styles.container}>
-      <View style={styles.row}>
-        {firstRow.map(({category,icon}, index) => (
-          <View
-            key={index}
-            style={[styles.categoryContainer, { backgroundColor: getColor(index), paddingHorizontal:45 }]}
-          >
-             <Icon name={icon} size={30} style={styles.icon} />
-            <Text style={styles.category}>{category}</Text>
-          </View>
-        ))}
-      </View>
-      <View style={styles.row}>
-        {secondRow.map(({category,icon}, index) => (
-          <View
-            key={index}
-            style={[styles.categoryContainer, { backgroundColor: getColor(index + 2) }]}
-          >
-              <Icon name={icon} size={30} style={styles.icon} />
-            <Text style={styles.category}>{category}</Text>
-          </View>
-        ))}
-      </View>
+      {renderRows()}
     </View>
   );
 };
@@ -53,29 +58,27 @@ export default Categories;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#0000",
     margin: 20,
   },
   row: {
     flexDirection: "row",
     justifyContent: "space-around",
     marginBottom: 10, 
-    gap:50
   },
   categoryContainer: {
-    backgroundColor: "#83829A",
+    flex: 1,
     marginHorizontal: 5,
-    padding: 30,
-    borderRadius:10
+    paddingVertical: 20, // Adjusted padding to allow more space for text
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
   category: {
     textAlign: "center",
-    fontSize:16
-    // padding:5
+    fontSize: 14, // Reduced font size to prevent cramping
+    paddingHorizontal: 5, // Added horizontal padding
   },
   icon: {
     marginBottom: 10,
-    alignItems:"center" ,
-    justifyContent:'center'
   },
 });

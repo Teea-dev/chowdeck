@@ -8,29 +8,31 @@ import ScreenHeaderBtn from "../components/header/ScreenHeaderBtn";
 import LocationSearch from "../components/locationSearch/locationSearch";
 import Categories from "../components/Categories";
 import Footer from "../components/footer/Footer";
+import { PromoCode, Filter } from "../assets/icons";
 export default function Page() {
   return (
     <SafeAreaView style={styles.container}>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: COLORS.white, },
+          headerStyle: { backgroundColor: COLORS.white },
           headerShadowVisible: false,
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={icons.discounted} dimension="60%" />
+            <>
+              <PromoCode />
+              <Filter />
+            </>
           ),
-          headerLeft: () => (
-            <LocationSearch/>
-          ),
-          headerTitle: "",
+          headerLeft: () => <LocationSearch />,
+          headerTitle: " ",
         }}
       />
-      <ScrollView >
+      <ScrollView>
         <Categories />
         <Handpicked />
         <Featured />
         <Allrestaurants />
       </ScrollView>
-      <Footer/>
+      <Footer />
     </SafeAreaView>
   );
 }
@@ -54,6 +56,5 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 36,
     color: "#38434D",
-    
   },
 });
