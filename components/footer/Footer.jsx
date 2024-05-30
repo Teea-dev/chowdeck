@@ -54,25 +54,25 @@ export default Footer;
 
 const styles = StyleSheet.create({
   footerContainer: {
-    position: "absolute", // Ensure the footer is fixed at the bottom
-    bottom: 0, // Stick it to the bottom
-    width: "100%", // Take full width
-    backgroundColor: COLORS.white, // Footer background color
-    paddingVertical: 10, // Vertical padding for the footer
-    alignItems: "center", // Center align items horizontally
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    backgroundColor: COLORS.white,
+    paddingVertical: 10,
+    alignItems: "center",
   },
   icons: {
-    flexDirection: "row", // Row direction for icons
-    justifyContent: "space-around", // Evenly space the icons
-    width: "100%", // Take full width within the container
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
   },
   iconContainer: {
-    alignItems: "center", // Center align each icon container
-    flex: 1, // Flex to take equal space
+    alignItems: "center",
+    flex: 1,
   },
   iconText: {
-    fontSize: 12, // Font size for icon text
-    marginTop: 5, // Margin top for text
-    color: COLORS.gray2, // Text color
+    fontSize: 12,
+    marginTop: 5,
+    color: COLORS.gray2,
   },
 });
