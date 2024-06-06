@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../../../constants";
 import { useNavigation } from "@react-navigation/native";
-import { Order, ChatRoundDots, Home, Search } from "../../assets/icons";
+import { Order, ChatRoundDots, Home, Search } from "../../../../assets/icons";
 
 const Footer = () => {
   const navigation = useNavigation();

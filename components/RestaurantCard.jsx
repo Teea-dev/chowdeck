@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Image,
-  Pressable,
-} from "react-native";
-import { COLORS, images } from "../constants";
+import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { COLORS } from "../constants"; // Adjust the path if necessary
 
 const RestaurantCard = ({ name, image, navigation }) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -16,11 +9,14 @@ const RestaurantCard = ({ name, image, navigation }) => {
   const toggleLike = () => {
     setIsLiked(!isLiked);
   };
+
+  const handlePress = () => {
+    console.log('Navigation prop:', navigation); // Log to check navigation prop
+    navigation.navigate("Details", { name });
+  };
+
   return (
-    <Pressable
-      style={[styles.card]}
-      onPress={() => navigation.navigate("Details", { name })}
-    >
+    <Pressable style={styles.card} onPress={handlePress}>
       {image && (
         <Image source={image} style={[styles.image, { borderRadius: 10 }]} />
       )}
@@ -39,63 +35,19 @@ const RestaurantCard = ({ name, image, navigation }) => {
           <Text style={styles.deliveryInfo}>From ₦400 | 19-20min</Text>
         </View>
         <View>
-          <Text style={styles.rating}>4.2 (167) </Text>
+          <Text style={styles.rating}>4.2 (167)</Text>
         </View>
       </View>
     </Pressable>
   );
 };
 
-
-const AllRestaurant = ({ navigation }) => {
-  const handpickedResturant = [
-    { name: "Dodo-pizza", image: images.dodo },
-    { name: "Chicken Republic", image: images.chickenRepublic },
-    { name: "Hexagon Rice Samonda", image: images.hexagon },
-    { name: "KFC-Ibadan", image: images.kfc },
-    { name: "Chef-kabs", image: images.pasta },
-    { name: "Starbucks", image: images.starbuck },
-    { name: "Burger-King", image: images.burgerKing },
-  ];
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>All Restaurants</Text>
-      <FlatList
-        data={handpickedResturant}
-        style={styles.flatlist}
-        renderItem={({ item }) => (
-          <RestaurantCard
-            name={item.name}
-            image={item.image}
-            navigation={navigation}
-          />
-        )}
-        keyExtractor={(item, index) => index.toString()}
-        showsHorizontalScrollIndicator={false}
-      />
-    </View>
-  );
-};
-
-export default AllRestaurant;
+export default RestaurantCard;
 
 const styles = StyleSheet.create({
-  container: {
-    margin: 10,
-  },
-  header: {
-    fontSize: 20,
-    fontWeight: "600",
-    marginLeft: 13,
-  },
   card: {
     margin: 5,
     padding: 10,
-  },
-  flatlist: {
-    marginVertical: 10,
-    marginLeft: 3,
   },
   name: {
     fontSize: 16,
@@ -103,7 +55,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   image: {
-    width: 320,
+    width: 300,
     height: 150,
     resizeMode: "cover",
   },
@@ -114,7 +66,6 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
   },
-
   deliveryInfo: {
     fontSize: 15,
     color: COLORS.gray,
@@ -123,7 +74,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginTop: 10,
-
     justifyContent: "space-between",
   },
   rating: {

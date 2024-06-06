@@ -1,14 +1,16 @@
 {
   "expo": {
     "scheme": "acme",
+
     "web": {
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-router"
-    ],
+    "splash": {
+      "backgroundColor": "#FEF9B0"
+    },
+    "plugins": ["expo-router"],
     "name": "chowdeck",
     "slug": "chowdeck",
-    "orientation":"portrait"
+    "orientation": "portrait"
   }
 }

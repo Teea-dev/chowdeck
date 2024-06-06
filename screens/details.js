@@ -12,7 +12,6 @@ function Details({route}) {
                 headerStyle: { backgroundColor: COLORS.white, },
                 headerShadowVisible: false,
                 headerRight: () => (
-                    // <PromoCode/>
                     <ScreenHeaderBtn iconUrl={icons.discounted} dimension="60%" />
                 ),
                 headerLeft: () => (
