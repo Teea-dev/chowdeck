@@ -8,3 +8,4 @@ export { default as Pharmacy } from "./pharmacy";
 export { default as Home } from "./home";
 export { default as Search } from "./search";
 export {default as Profile} from "./profile";
+export {default as Cancel} from "./cancel";

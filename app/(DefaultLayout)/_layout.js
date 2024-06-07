@@ -19,12 +19,13 @@ export default function RootLayout() {
         options={{
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
+          headerShown: false,
         }}
       />
       <Tabs.Screen
         name="order"  
         options={{
-          tabBarLabel: "Order",
+          tabBarLabel: "Orders",
           tabBarIcon: ({ color, size }) => <Order color={color} size={size} />,
         }}
       />
