@@ -1,45 +1,34 @@
-import React, { useState } from "react";
-import {
-  View,
-  TextInput,
-  StyleSheet,
-  Keyboard,
-  TouchableOpacity,
-} from "react-native";
-import { Search } from "../../../../assets/icons";
-import CancelIcon from "../../../../assets/icons/cancel";
+import React, { useContext } from "react";
+import { View, TextInput, StyleSheet, Keyboard, TouchableOpacity } from "react-native";
+import { SearchContext } from "../../../context/searchContext";
+import { Search, Cancel } from "../../../../assets/icons";
+
 export default function SearchInput() {
-  const [isFocused, setIsFocused] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+  const { searchInput, setSearchInput } = useContext(SearchContext);
 
   const handleCancel = () => {
-    setInputValue("");
-    setIsFocused(false);
+    setSearchInput("");
     Keyboard.dismiss();
   };
 
   return (
-    <>
-      <View style={styles.container}>
-        <View style={styles.icon}>
-          <Search size={20} color="#494747" />
-        </View>
-        <TextInput
-          style={styles.input}
-          placeholder="Food, drinks, groceries etc"
-          placeholderTextColor="#aaa"
-          value={inputValue}
-          onChangeText={(text) => setInputValue(text)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-        {isFocused && (
-          <TouchableOpacity onPress={handleCancel}>
-            <CancelIcon size={15} color="#494747" />
-          </TouchableOpacity>
-        )}
+    <View style={styles.container}>
+      <View style={styles.icon}>
+        <Search size={20} color="#494747" />
       </View>
-    </>
+      <TextInput
+        style={styles.input}
+        placeholder="Food, drinks, groceries etc"
+        placeholderTextColor="#aaa"
+        value={searchInput}
+        onChangeText={(text) => setSearchInput(text)}
+      />
+      {searchInput !== "" && (
+        <TouchableOpacity onPress={handleCancel}>
+          <Cancel size={15} color="#494747" />
+        </TouchableOpacity>
+      )}
+    </View>
   );
 }
 
@@ -53,12 +42,10 @@ const styles = StyleSheet.create({
     borderColor: "#ddd",
     padding: 20,
     backgroundColor: "#f5f5f5",
-
-    marginVertical: 10,
+    marginVertical: 5,
   },
   icon: {
     marginRight: 10,
-    backgroundColor: "transparent",
   },
   input: {
     flex: 1,

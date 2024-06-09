@@ -22,7 +22,7 @@ function SearchIcon({ color = "#83829A", size = 28 }) {
 
       <G id="SVGRepo_iconCarrier">
         <G clip-path="url(#clip0_15_152)">
-          <Rect width={size} height={size} fill="white" />
+          {/* <Rect width={size} height={size} fill="white" /> */}
           <Circle
             cx="10.5"
             cy="10.5"
@@ -37,7 +37,7 @@ function SearchIcon({ color = "#83829A", size = 28 }) {
         </G>
         <Defs>
           <ClipPath id="clip0_15_152">
-            <Rect width={size} height={size} fill="white" />
+            <Rect width={size} height={size} fill="none" />
           </ClipPath>
         </Defs>
       </G>
