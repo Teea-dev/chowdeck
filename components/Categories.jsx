@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome"; 
-import { OnlineStoreBasket, Restaurant, Pharmacy } from "../assets/icons"; // Make sure the import path is correct
+import { OnlineStoreBasket, Restaurant, Pharmacy, LocalMarket } from "../assets/icons"; // Make sure the import path is correct
 
 const Categories = ({ navigation }) => {
   const categories = [
@@ -9,7 +9,7 @@ const Categories = ({ navigation }) => {
     { category: "Supermarkets", icon: "shopping-cart", customIcon: OnlineStoreBasket },
     { category: "Pharmacies", icon: "medkit", customIcon: Pharmacy },
     { category: "Relay By Chowdeck", icon: "globe" },
-    { category: "Local Markets", icon: "ellipsis-h" },
+    { category: "Local Markets", customIcon:LocalMarket },
     { category: "More", icon: "ellipsis-h" },
   ];
 

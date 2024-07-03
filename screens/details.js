@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack } from 'expo-router';
 import { View, ScrollView,SafeAreaView } from 'react-native';
-import { PromoCode } from '../../assets/icons';
+// import { PromoCode } from '../../assets/icons';
 
 function Details({route}) {
     const { name } = route.params;

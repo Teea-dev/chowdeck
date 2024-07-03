@@ -8,10 +8,13 @@ export default function RootLayout() {
 
     <Tabs screenOptions={{ tabBarActiveTintColor: "#0C513F" }}>
       <Tabs.Screen
-        name="index"
+      
+        name="home"
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
+          headerShown: false,
+
         }}
       />
       <Tabs.Screen

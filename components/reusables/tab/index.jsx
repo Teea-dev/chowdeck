@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Dimensions, ScrollView } from "react-native";
 import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import AllTab from "../../tabRoutes/Allroute";
+import ItemSearch from "../../tabRoutes/itemSearch";
 const AllRoute = () => (
   <View style={[styles.scene, { backgroundColor: "white" }]}>
     <AllTab />
@@ -10,20 +11,20 @@ const AllRoute = () => (
 
 const FoodRoute = () => (
   <View style={[styles.scene, { backgroundColor: "white" }]}>
-    <Text>Food</Text>
+    <ItemSearch />
   </View>
 );
 
 const SupermarketRoute = () => (
   <View style={[styles.scene, { backgroundColor: "white" }]}>
-    <Text>Supermarket</Text>
-  </View>
+    <ItemSearch />
+    </View>
 );
 
 const PharmaciesRoute = () => (
   <View style={[styles.scene, { backgroundColor: "white" }]}>
-    <Text>Pharmacies</Text>
-  </View>
+    <ItemSearch />
+    </View>
 );
 
 const initialLayout = { width: Dimensions.get("window").width };
@@ -88,15 +89,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     borderRadius: 8,
     borderColor: "#ddd",
-    // padding:0,
     paddingVertical: -120,
     paddingHorizontal: -10,
   },
   labelContainer: {
-    // padding: 8,
-    // flex: 1, // Take up remaining space within each tab
-    // alignItems: "center", // Center label text horizontally
-    // justifyContent: "center",
+  
     borderRadius: 8,
     paddingVertical: 6,
     paddingHorizontal: 12,

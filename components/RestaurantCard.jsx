@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "../constants"; // Adjust the path if necessary
-
+import { useRouter } from "expo-router";
 const RestaurantCard = ({ name, image, navigation }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const toggleLike = () => {
     setIsLiked(!isLiked);
   };
+  const router = useRouter();
 
   const handlePress = () => {
-    console.log('Navigation prop:', navigation); // Log to check navigation prop
-    navigation.navigate("Details", { name });
+    router.push({
+      pathname: "/details",
+      params: { name },
+    });
   };
 
   return (

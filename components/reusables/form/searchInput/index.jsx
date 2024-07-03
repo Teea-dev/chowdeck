@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { View, TextInput, StyleSheet, Keyboard, TouchableOpacity } from "react-native";
 import { SearchContext } from "../../../context/searchContext";
 import { Search, Cancel } from "../../../../assets/icons";
 
 export default function SearchInput() {
   const { searchInput, setSearchInput } = useContext(SearchContext);
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleCancel = () => {
     setSearchInput("");
     Keyboard.dismiss();
+    setIsFocused(false);
   };
 
   return (
@@ -22,8 +24,10 @@ export default function SearchInput() {
         placeholderTextColor="#aaa"
         value={searchInput}
         onChangeText={(text) => setSearchInput(text)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
       />
-      {searchInput !== "" && (
+      {(isFocused || searchInput !== "") && (
         <TouchableOpacity onPress={handleCancel}>
           <Cancel size={15} color="#494747" />
         </TouchableOpacity>

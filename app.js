@@ -1,8 +1,15 @@
-import { registerRootComponent } from 'expo';
-import { Router } from 'expo-router';
+import { registerRootComponent } from "expo";
+import { Router } from "expo-router";
+import { RestaurantProvider } from "./components/context/restaurantContext";
 
 const App = () => {
-  return <Router />;
+  return (
+    // <RestaurantProvider>
+    <>
+      <Router />
+      {/* </RestaurantProvider> */}
+    </>
+  );
 };
 
 export default registerRootComponent(App);

@@ -1,16 +1,25 @@
-import React from "react";
+// Home Component (app/index.js)
+
+import React, { useContext } from "react";
 import { View, Text, SafeAreaView, ScrollView, StyleSheet } from "react-native";
-import { COLORS } from "../../constants";
-import { Stack } from "expo-router";
-import Handpicked from "../../components/Handpicked";
-import Allrestaurants from "../../components/Allrestaurants";
-import Categories from "../../components/Categories";
-// import ScreenHeaderBtn from '../../components/header/ScreenHeaderBtn';
-// import LocationSearch from '../components/locationSearch/locationSearch.jsx';
-import { PromoCode, Filter } from "../../assets/icons";
-import Featured from "../../components/Featured";
+import { COLORS } from "../../../constants";
+import { Stack, useRouter } from "expo-router";
+import Handpicked from "../../../components/Handpicked";
+import Allrestaurants from "../../../components/Allrestaurants";
+import Categories from "../../../components/Categories";
+import { PromoCode, Filter } from "../../../assets/icons";
+import Featured from "../../../components/Featured";
+import { RestaurantContext } from "../../../components/context/restaurantContext";
 
 export default function Home() {
+  const router = useRouter();
+  // const { setSelectedRestaurant } = useContext(RestaurantContext);
+
+  const handleRoute = (restaurant) => {
+    // setSelectedRestaurant(restaurant);
+    router.push("/details");
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Stack.Screen
@@ -23,7 +32,6 @@ export default function Home() {
                 <PromoCode />
                 <Filter />
               </View>
-              {/* <LocationSearch style={styles.locationSearch} /> */}
             </View>
           ),
           headerTitle: "",
@@ -31,7 +39,9 @@ export default function Home() {
       />
       <ScrollView>
         <Categories />
-        <Handpicked />
+        <Handpicked 
+        // onRestaurantSelect={handleRoute} 
+        />
         <Featured />
         <Allrestaurants />
       </ScrollView>
@@ -52,19 +62,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginRight: 8,
-  },
-  main: {
-    flex: 1,
-    justifyContent: "center",
-    maxWidth: 960,
-    marginHorizontal: "auto",
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
   },
 });
