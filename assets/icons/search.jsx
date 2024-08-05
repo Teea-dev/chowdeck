@@ -1,7 +1,7 @@
 import React from "react";
-import Svg, { G, Path, Circle,ClipPath, Defs, Rect } from "react-native-svg";
+import Svg, { G, Path, Circle, ClipPath, Defs, Rect } from "react-native-svg";
 
-function SearchIcon({ color = "#83829A", size = 28 }) {
+function SearchIcon({ color = "", size = {} }) {
   return (
     <Svg
       width={size}
@@ -22,7 +22,6 @@ function SearchIcon({ color = "#83829A", size = 28 }) {
 
       <G id="SVGRepo_iconCarrier">
         <G clip-path="url(#clip0_15_152)">
-          {/* <Rect width={size} height={size} fill="white" /> */}
           <Circle
             cx="10.5"
             cy="10.5"

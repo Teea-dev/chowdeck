@@ -21,3 +21,7 @@ export { default as Pizza } from "./pizza";
 export { default as Soup } from "./soup";
 export { default as Spaghetti } from "./spaghetti";
 export { default as SearchHat } from "./hat";
+export { default as BackArrow } from "./arrowBack";
+export { default as Heart } from "./heart";
+export { default as Share } from "./share";
+export { default as NextNav } from "./nextNav";

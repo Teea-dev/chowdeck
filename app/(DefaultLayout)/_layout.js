@@ -21,7 +21,7 @@ export default function RootLayout() {
         name="search"
         options={{
           tabBarLabel: "Search",
-          tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => <Search color="#83829A" size={28} />,
           headerShown: false,
         }}
       />

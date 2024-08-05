@@ -9,14 +9,11 @@ import Allrestaurants from "../../../components/Allrestaurants";
 import Categories from "../../../components/Categories";
 import { PromoCode, Filter } from "../../../assets/icons";
 import Featured from "../../../components/Featured";
-import { RestaurantContext } from "../../../components/context/restaurantContext";
 
 export default function Home() {
   const router = useRouter();
-  // const { setSelectedRestaurant } = useContext(RestaurantContext);
 
   const handleRoute = (restaurant) => {
-    // setSelectedRestaurant(restaurant);
     router.push("/details");
   };
 
@@ -39,9 +36,7 @@ export default function Home() {
       />
       <ScrollView>
         <Categories />
-        <Handpicked 
-        // onRestaurantSelect={handleRoute} 
-        />
+        <Handpicked />
         <Featured />
         <Allrestaurants />
       </ScrollView>
