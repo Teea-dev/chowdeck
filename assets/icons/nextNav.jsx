@@ -1,7 +1,7 @@
 import React from "react";
 import Svg, { G, Path } from "react-native-svg";
 
-function NextNavIcon({ color = "#231f20", size = 32 }) {
+function NextNavIcon({ color = "#000000", size = {} }) {
   return (
     <Svg
       width={size}
@@ -10,7 +10,7 @@ function NextNavIcon({ color = "#231f20", size = 32 }) {
       xmlns="http://www.w3.org/2000/svg"
       fill={color}
     >
-      <G id="SVGRepo_bgCarrier" strokeWidth="1" />
+      <G id="SVGRepo_bgCarrier" strokeWidth="3" />
 
       <G
         id="SVGRepo_tracerCarrier"
@@ -31,3 +31,4 @@ function NextNavIcon({ color = "#231f20", size = 32 }) {
 }
 
 export default NextNavIcon;
+

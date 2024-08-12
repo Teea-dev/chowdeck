@@ -9,43 +9,7 @@ import {
 } from "react-native";
 import { COLORS, images } from "../constants";
 import Icon from "react-native-vector-icons/FontAwesome";
-
-const RestaurantCard = ({ name, image, navigation }) => {
-  const [isLiked, setIsLiked] = useState(false);
-
-  const toggleLike = () => {
-    setIsLiked(!isLiked);
-  };
-  return (
-    <Pressable
-      style={[styles.card]}
-      onPress={() => navigation.navigate("Details", { name })}
-    >
-      {image && (
-        <Image source={image} style={[styles.image, { borderRadius: 10 }]} />
-      )}
-      <View style={styles.textAndLove}>
-        <Text style={styles.name}>{name}</Text>
-        <Icon
-          name="heart"
-          size={18}
-          color={isLiked ? COLORS.red : COLORS.gray}
-          onPress={toggleLike}
-        />
-      </View>
-      <View style={styles.deliveryAndRating}>
-        <View style={styles.deliveryInfoContainer}>
-          <Icon name="motorcycle" size={18} style={styles.icon} />
-          <Text style={styles.deliveryInfo}>From ₦400 | 19-20min</Text>
-        </View>
-        <View>
-          <Text style={styles.rating}>4.2 (167) </Text>
-        </View>
-      </View>
-    </Pressable>
-  );
-};
-
+import RestaurantCard from "./RestaurantCard";
 
 const AllRestaurant = ({ navigation }) => {
   const handpickedResturant = [
