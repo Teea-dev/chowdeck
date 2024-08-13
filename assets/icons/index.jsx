@@ -25,3 +25,4 @@ export { default as BackArrow } from "./arrowBack";
 export { default as Heart } from "./heart";
 export { default as Share } from "./share";
 export { default as NextNav } from "./nextNav";
+export { default as BarIcon } from "./bar";

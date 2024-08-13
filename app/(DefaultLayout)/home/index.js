@@ -9,6 +9,7 @@ import Allrestaurants from "../../../components/Allrestaurants";
 import Categories from "../../../components/Categories";
 import { PromoCode, Filter } from "../../../assets/icons";
 import Featured from "../../../components/Featured";
+import DeliveryInformation from "../../../components/detailsInformation/devileryInformation";
 
 export default function Home() {
   const router = useRouter();
@@ -35,6 +36,8 @@ export default function Home() {
         }}
       />
       <ScrollView>
+      {/* <DeliveryInformation /> */}
+
         <Categories />
         <Handpicked />
         <Featured />
